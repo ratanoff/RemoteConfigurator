@@ -14,46 +14,41 @@
 
 <body>
 
-    <div style="width: 50%; margin: 200px auto">
-        <form>
-            <div class="form-group row">
-                <label class="col-4"></label>
-                <div class="col-8">
-                    <input id="title" name="title" type="text" class="form-control" aria-describedby="titleHelpBlock"
-                        required="required">
-                    <span id="titleHelpBlock" class="form-text text-muted">Текст баннера</span>
-                </div>
+<div style="width: 50%; margin: 200px auto">
+    <form>
+        <div class="form-group row">
+            <label class="col-4"></label>
+            <div class="col-8">
+                <input id="title" name="title" type="text" class="form-control" aria-describedby="titleHelpBlock"
+                       required="required">
+                <span id="titleHelpBlock" class="form-text text-muted">Текст баннера</span>
             </div>
-            <div class="form-group row">
-                <label class="col-4"></label>
-                <div class="col-8">
-                    <input id="startFragment" name="startFragment" type="text" class="form-control"
-                        aria-describedby="startFragmentHelpBlock" required="required">
-                    <span id="startFragmentHelpBlock" class="form-text text-muted">На каком экране показать
+        </div>
+        <div class="form-group row">
+            <label class="col-4"></label>
+            <div class="col-8">
+                <input id="startFragment" name="startFragment" type="text" class="form-control"
+                       aria-describedby="startFragmentHelpBlock" required="required">
+                <span id="startFragmentHelpBlock" class="form-text text-muted">На каком экране показать
                         баннер</span>
                 </div>
             </div>
             <div class="form-group row">
                 <div class="offset-4 col-8">
-                    <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+                    <button name="submit" type="submit" class="btn btn-primary" onclick="getFormData()">Submit</button>
                 </div>
             </div>
         </form>
 
-        <div>$('form').serializeArray():</div>
-        <div id=serializearray>asfdg</div>
+    <div id=serializearray></div>
 
-    </div>
+</div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
-
 
 
 </html>
