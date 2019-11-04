@@ -1,3 +1,22 @@
+$(document).ready(function(){
+    let dropdown = $('#startFragment');
+
+    dropdown.empty();
+
+    dropdown.append('<option selected="true" disabled>Выберите экран</option>');
+    dropdown.prop('selectedIndex', 0);
+
+    // const url = 'https://api.myjson.com/bins/7xq2x'; // countries
+    const url = 'https://api.myjson.com/bins/zxm2w';  // fragments
+
+// Populate dropdown with list of provinces
+    $.getJSON(url, function (data) {
+        $.each(data, function (key, entry) {
+            dropdown.append($('<option></option>').attr('value', key).text(key));
+        })
+    });
+});
+
 $(function () {
     let update = function () {
         $('#serializearray').text(

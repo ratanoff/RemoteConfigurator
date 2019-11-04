@@ -1,0 +1,25 @@
+{
+  "name": "remoteconfigurator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ratanoff/RemoteConfigurator.git"
+  },
+  "author": "Leonid Ratanov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ratanoff/RemoteConfigurator/issues"
+  },
+  "homepage": "https://github.com/ratanoff/RemoteConfigurator#readme",
+  "dependencies": {
+    "file-system": "^2.2.2",
+    "fs": "0.0.1-security",
+    "fs-js": "^1.0.6",
+    "fs-web": "^1.0.1"
+  }
+}
