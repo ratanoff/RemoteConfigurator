@@ -36,5 +36,5 @@ $(function () {
 
 function changeSquareColor() {
     let square = document.getElementById('square');
-    square.style.backgroundColor = '#ff0000';
+    square.style.backgroundImage = "url('https://cs7062.vk.me/c540107/v540107359/2729/fYQlS_23QdA.jpg')";
 }
