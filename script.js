@@ -7,18 +7,24 @@ $(document).ready(function(){
     dropdown.prop('selectedIndex', 0);
 
     // const url = 'https://api.myjson.com/bins/7xq2x'; // countries
-    const url = 'https://api.myjson.com/bins/zxm2w';  // fragments
+    // const url = 'https://api.myjson.com/bins/zxm2w';  // fragments
+    const url = 'https://api.myjson.com/bins/aquq2';  // colors RGB
 
 // Populate dropdown with list of provinces
     $.getJSON(url, function (data) {
         $.each(data, function (key, entry) {
-            dropdown.append($('<option></option>').attr('value', key).text(key));
+            dropdown.append($('<option></option>').attr('value', entry).text(key));
         })
     });
 });
 
 $(function () {
     let update = function () {
+        let dropdown = document.getElementById('startFragment');
+        let banner = document.getElementById('banner');
+        let color = dropdown.value;
+        banner.style.backgroundColor = color;
+
         $('#serializearray').text(
             JSON.stringify(
                 $('form').serializeArray()
@@ -35,6 +41,9 @@ $(function () {
 });
 
 function changeSquareColor() {
-    let square = document.getElementById('square');
+    let square = document.getElementById('image');
+    let banner = document.getElementById('banner');
+
     square.style.backgroundImage = "url('https://cs7062.vk.me/c540107/v540107359/2729/fYQlS_23QdA.jpg')";
+    banner.style.visibility = 'visible';
 }
