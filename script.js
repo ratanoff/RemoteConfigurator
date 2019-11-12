@@ -33,3 +33,8 @@ $(function () {
     update();
     $('form').change(update);
 });
+
+function changeSquareColor() {
+    let square = document.getElementById('square');
+    square.style.backgroundColor = '#ff0000';
+}
