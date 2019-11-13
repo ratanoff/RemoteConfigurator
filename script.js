@@ -8,7 +8,8 @@ $(document).ready(function(){
 
     // const url = 'https://api.myjson.com/bins/7xq2x'; // countries
     // const url = 'https://api.myjson.com/bins/zxm2w';  // fragments
-    const url = 'https://api.myjson.com/bins/aquq2';  // colors RGB
+    // const url = 'https://api.myjson.com/bins/aquq2';  // colors RGB
+    const url = 'https://api.myjson.com/bins/gx5vy';    // Screens [name, imgUrl]
 
 // Populate dropdown with list of provinces
     $.getJSON(url, function (data) {
@@ -21,9 +22,12 @@ $(document).ready(function(){
 $(function () {
     let update = function () {
         let dropdown = document.getElementById('startFragment');
-        let banner = document.getElementById('banner');
-        let color = dropdown.value;
-        banner.style.backgroundColor = color;
+        let screen = document.getElementById('image');
+        // let banner = document.getElementById('banner');
+        // let color = dropdown.value;
+        // banner.style.backgroundColor = color;
+
+        screen.style.backgroundImage = "url(" + dropdown.value + ")";
 
         $('#serializearray').text(
             JSON.stringify(
