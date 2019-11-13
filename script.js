@@ -45,9 +45,9 @@ $(function () {
 });
 
 function changeSquareColor() {
-    let square = document.getElementById('image');
+    // let square = document.getElementById('image');
     let banner = document.getElementById('banner');
 
-    square.style.backgroundImage = "url('https://cs7062.vk.me/c540107/v540107359/2729/fYQlS_23QdA.jpg')";
+    // square.style.backgroundImage = "url('https://cs7062.vk.me/c540107/v540107359/2729/fYQlS_23QdA.jpg')";
     banner.style.visibility = 'visible';
 }
