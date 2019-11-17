@@ -20,6 +20,7 @@
     "file-system": "^2.2.2",
     "fs": "0.0.1-security",
     "fs-js": "^1.0.6",
-    "fs-web": "^1.0.1"
+    "fs-web": "^1.0.1",
+    "node-fetch": "^2.6.0"
   }
 }

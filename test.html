@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="author" content="Leonid Ratanov">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Checkout example · Bootstrap</title>
+    <title>Инфо-сервис. Конфигуратор</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/checkout/">
 
@@ -47,13 +47,67 @@
         <div class="col-md-4 order-md-2 mb-4">
             <div id="container" style="display: inline-block;">
                 <div id="image">
-                    <div id="banner">Текст баннера</div>
+                    <div id="banner">
+                        <p class="banner_text">Сервис может быть временно недоступен</p>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-md-8 order-md-1">
             <h4 class="mb-3">Alarm Banner</h4>
             <form class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="startFragment">Экран <span class="text-muted">(Где показывать)</span></label>
+                    <select class="custom-select d-block w-100" id="startFragment" required>
+
+                    </select>
+                    <div class="invalid-feedback">
+                        Please select a valid country.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="banner_text">Текст баннера</label>
+                    <input type="email" class="form-control" id="banner_text" placeholder="you@example.com">
+                    <div class="invalid-feedback">
+                        Please enter a valid email address for shipping updates.
+                    </div>
+                </div>
+
+                <hr class="mb-4">
+
+                <!--Versions-->
+                <h4 class="mb-3">Версия приложения</h4>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="minVersion-checkbox">
+                            <label class="custom-control-label" style="margin-bottom: 0.5rem" for="minVersion-checkbox">Минимальная версия</label>
+                        </div>
+                        <select class="custom-select d-block w-100" id="minVersion" disabled>
+                        </select>
+                        <div class="invalid-feedback">
+                            Valid first name is required.
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="maxVersion-checkbox">
+                            <label class="custom-control-label" style="margin-bottom: 0.5rem" for="maxVersion-checkbox">Максимальная версия</label>
+                        </div>
+                        <select class="custom-select d-block w-100" id="maxVersion" disabled>
+                        </select>
+                        <div class="invalid-feedback">
+                            Valid last name is required.
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="mb-4">
+
+                <!--Time-->
+                <h4 class="mb-3">Время показа</h4>
+
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="firstName">First name</label>
@@ -211,5 +265,9 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
-<script src="form-validation.js"></script></body>
+<script src="form-validation.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="screen_preview.js"></script>
+<script src="app_versions.js"></script>
+</body>
 </html>
