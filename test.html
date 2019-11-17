@@ -48,7 +48,7 @@
             <div id="container" style="display: inline-block;">
                 <div id="image">
                     <div id="banner">
-                        <p class="banner_text">Сервис может быть временно недоступен</p>
+                        <p id="banner_text" class="banner_text">Сервис может быть временно недоступен</p>
                     </div>
                 </div>
             </div>
@@ -67,8 +67,8 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="banner_text">Текст баннера</label>
-                    <input type="email" class="form-control" id="banner_text" placeholder="you@example.com">
+                    <label for="banner_text_input">Текст баннера <span class="text-muted">(Переход на новую строку через &#60br&#62)</span></label>
+                    <input class="form-control" id="banner_text_input" value="Сервис может быть временно недоступен">
                     <div class="invalid-feedback">
                         Please enter a valid email address for shipping updates.
                     </div>
@@ -267,7 +267,8 @@
 <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
 <script src="form-validation.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="screen_preview.js"></script>
-<script src="app_versions.js"></script>
+<script src="scripts/screen_preview.js"></script>
+<script src="scripts/app_versions.js"></script>
+<script src="scripts/banner.js"></script>
 </body>
 </html>
