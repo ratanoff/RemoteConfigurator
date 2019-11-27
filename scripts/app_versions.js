@@ -1,4 +1,4 @@
-$(document).ready(function () {
+/*$(document).ready(function () {
     let url = "https://data.42matters.com/api/v2.0/android/apps/versions.json?access_token=ba32d047435afdfc0d41671e71cc394a67047596&p=ru.pay.bisys.centralkass";
     fetch(url).then(function (response) {
         return response.json();
@@ -21,7 +21,11 @@ function fillSelectVersions(versions) {
         minVersion.append($('<option></option>').attr('value', entry.version).text(entry.version));
         maxVersion.append($('<option></option>').attr('value', entry.version).text(entry.version));
     })
-}
+}*/
+
+$(document).ready(function () {
+    initCheckboxes();
+});
 
 function initCheckboxes() {
     let minCheckbox = document.getElementById('minVersion-checkbox');
