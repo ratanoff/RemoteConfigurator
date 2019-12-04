@@ -15,7 +15,7 @@ async function updateVersions() {
 
 
 function getLastVersion() {
-    return gplay.app({appId: 'ru.pay.bisys.centralkass.error'})
+    return gplay.app({appId: 'ru.pay.bisys.centralkass'})
         .then(data => data.version, error => "0")
 }
 
