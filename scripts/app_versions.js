@@ -1,15 +1,23 @@
-/*$(document).ready(function () {
-    let url = "https://data.42matters.com/api/v2.0/android/apps/versions.json?access_token=ba32d047435afdfc0d41671e71cc394a67047596&p=ru.pay.bisys.centralkass";
-    fetch(url).then(function (response) {
-        return response.json();
-    }).then(function (data) {
-        console.log(data);
-        fillSelectVersions(data.versions);
-        initCheckboxes();
-    }).catch(function () {
-        console.log("load error");
-    })
-});
+let fs = require('fs');
+const gplay = require('google-play-scraper');
+
+updateVersions();
+
+async function updateVersions() {
+    let versions = require('./versions.json');
+    let last = await getLastVersion();
+    if (last != "0") {
+        versions.push(last)
+    }
+
+    fs.writeFileSync('scripts/config.json', JSON.stringify(versions, null, 2));
+}
+
+
+function getLastVersion() {
+    return gplay.app({appId: 'ru.pay.bisys.centralkass.error'})
+        .then(data => data.version, error => "0")
+}
 
 function fillSelectVersions(versions) {
     let minVersion = $('#minVersion');
@@ -21,11 +29,7 @@ function fillSelectVersions(versions) {
         minVersion.append($('<option></option>').attr('value', entry.version).text(entry.version));
         maxVersion.append($('<option></option>').attr('value', entry.version).text(entry.version));
     })
-}*/
-
-$(document).ready(function () {
-    initCheckboxes();
-});
+}
 
 function initCheckboxes() {
     let minCheckbox = document.getElementById('minVersion-checkbox');

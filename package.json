@@ -21,6 +21,7 @@
     "fs": "0.0.1-security",
     "fs-js": "^1.0.6",
     "fs-web": "^1.0.1",
+    "google-play-scraper": "^7.1.1",
     "node-fetch": "^2.6.0"
   }
 }
