@@ -1,18 +1,29 @@
-let fs = require('fs');
+// let fs = require('fs');
 const gplay = require('google-play-scraper');
+
+const minVersion = "2.30";
 
 updateVersions();
 
 async function updateVersions() {
-    let versions = require('./versions.json');
+    // let versions = require('./versions.json');
     let last = await getLastVersion();
-    if (last != "0") {
-        versions.push(last)
-    }
+    if (last == "0") return;
 
+    let versions = range(parseFloat(minVersion), parseFloat(last));
+    fillSelectVersions(versions);
+
+    console.log(versions);
     fs.writeFileSync('scripts/config.json', JSON.stringify(versions, null, 2));
 }
 
+function range(start, end) {
+    let ans = [];
+    for (let i = start; i <= end; i += 0.01) {
+        ans.push(i.toFixed(2));
+    }
+    return ans;
+}
 
 function getLastVersion() {
     return gplay.app({appId: 'ru.pay.bisys.centralkass'})
@@ -28,7 +39,9 @@ function fillSelectVersions(versions) {
     versions.forEach(function (entry) {
         minVersion.append($('<option></option>').attr('value', entry.version).text(entry.version));
         maxVersion.append($('<option></option>').attr('value', entry.version).text(entry.version));
-    })
+    });
+
+    initCheckboxes()
 }
 
 function initCheckboxes() {
