@@ -1,33 +1,27 @@
-// let fs = require('fs');
-const gplay = require('google-play-scraper');
-
 const minVersion = "2.30";
+const lastVersionUrl = "http://46.146.211.31:8081/api/version";
 
-updateVersions();
+getLastVersion();
 
-async function updateVersions() {
-    // let versions = require('./versions.json');
-    let last = await getLastVersion();
-    if (last == "0") return;
+function getLastVersion() {
+    $.ajax({
+        url: lastVersionUrl
+    }).then(function (data) {
+        updateVersions(data);
+    });
+}
 
-    let versions = range(parseFloat(minVersion), parseFloat(last));
+function updateVersions(lastVersion) {
+    let versions = range(parseFloat(minVersion), parseFloat(lastVersion));
     fillSelectVersions(versions);
-
-    console.log(versions);
-    fs.writeFileSync('scripts/config.json', JSON.stringify(versions, null, 2));
 }
 
 function range(start, end) {
-    let ans = [];
+    let versions = [];
     for (let i = start; i <= end; i += 0.01) {
-        ans.push(i.toFixed(2));
+        versions.push(i.toFixed(2));
     }
-    return ans;
-}
-
-function getLastVersion() {
-    return gplay.app({appId: 'ru.pay.bisys.centralkass'})
-        .then(data => data.version, error => "0")
+    return versions;
 }
 
 function fillSelectVersions(versions) {
@@ -37,9 +31,12 @@ function fillSelectVersions(versions) {
     maxVersion.empty();
 
     versions.forEach(function (entry) {
-        minVersion.append($('<option></option>').attr('value', entry.version).text(entry.version));
-        maxVersion.append($('<option></option>').attr('value', entry.version).text(entry.version));
+        minVersion.append($('<option></option>').attr('value', entry).text(entry));
+        maxVersion.append($('<option></option>').attr('value', entry).text(entry));
     });
+
+    minVersion.prop('selectedIndex', 0);
+    maxVersion.prop('selectedIndex', versions.length - 1);
 
     initCheckboxes()
 }

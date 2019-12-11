@@ -17,11 +17,16 @@
   },
   "homepage": "https://github.com/ratanoff/RemoteConfigurator#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "file-system": "^2.2.2",
     "fs": "0.0.1-security",
     "fs-js": "^1.0.6",
     "fs-web": "^1.0.1",
     "google-play-scraper": "^7.1.1",
+    "isomorphic-fetch": "^2.2.1",
     "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5"
   }
 }
