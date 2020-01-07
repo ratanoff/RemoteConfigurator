@@ -3,9 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
     <meta name="author" content="Leonid Ratanov">
-    <meta name="generator" content="Jekyll v3.8.5">
     <title>Инфо-сервис. Конфигуратор</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/checkout/">
@@ -15,6 +13,10 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 
+    <link href="datepicker/css/core.css" rel="stylesheet" type="text/css">
+    <link href="datepicker/css/datepicker.css" rel="stylesheet" type="text/css">
+    <link href="datepicker/css/timepicker.css" rel="stylesheet" type="text/css">
+    <link href="datepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
 
     <style>
         .bd-placeholder-img {
@@ -117,17 +119,25 @@
 
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label for="firstName">Начало показа</label>
-                        <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="startTime-checkbox">
+                            <label class="custom-control-label" style="margin-bottom: 0.5rem" for="startTime-checkbox">Начало
+                                показа</label>
+                        </div>
+                        <input id="startTime" name="startTime"/>
                         <div class="invalid-feedback">
                             Valid first name is required.
                         </div>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label for="lastName">Окончание показа</label>
-                        <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="endTime-checkbox">
+                            <label class="custom-control-label" style="margin-bottom: 0.5rem" for="startTime-checkbox">Окончание
+                                показа</label>
+                        </div>
+                        <input id="endTime" name="endTime"/>
                         <div class="invalid-feedback">
-                            Valid last name is required.
+                            Valid first name is required.
                         </div>
                     </div>
                 </div>
@@ -148,18 +158,36 @@
         </ul>
     </footer>
 </div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="/docs/4.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
-        crossorigin="anonymous"></script>
+
+<script src="lib/jquery.js"></script>
+
 <script src="form-validation.js"></script>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="scripts/screen_preview.js"></script>
 <script src="scripts/app_versions.js"></script>
 <script src="scripts/get_form_data.js"></script>
 <script src="scripts/banner.js"></script>
+
+<script src="datepicker/js/core.js"></script>
+<script src="datepicker/js/datepicker.js"></script>
+<script src="datepicker/js/timepicker.js"></script>
+<script src="datepicker/js/datetimepicker.js"></script>
+
+<script>
+    $('#startTime').datetimepicker({
+        uiLibrary: 'bootstrap4',
+        locale: 'ru-ru',
+        format: 'dd-mm-yyyy HH:MM',
+        datepicker: {weekStartDay: 1},
+        footer: true
+    });
+    $('#endTime').datetimepicker({
+        uiLibrary: 'bootstrap4',
+        locale: 'ru-ru',
+        format: 'dd-mm-yyyy HH:MM',
+        datepicker: {weekStartDay: 1},
+        footer: true
+    });
+</script>
+
 </body>
 </html>
