@@ -17,6 +17,7 @@
     <link href="datepicker/css/datepicker.css" rel="stylesheet" type="text/css">
     <link href="datepicker/css/timepicker.css" rel="stylesheet" type="text/css">
     <link href="datepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+    <link href="spectrum/spectrum.css" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
     <link href="form-validation.css" rel="stylesheet">
@@ -59,6 +60,16 @@
                     <label for="banner_text_input">Текст баннера <span class="text-muted">(Переход на новую строку через &#60br&#62)</span></label>
                     <input class="form-control" id="banner_text_input" name="title"
                            value="Сервис может быть временно недоступен">
+                    <div class="invalid-feedback">
+                        Please enter a valid email address for shipping updates.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div>
+                    <label for="banner_color">Цвет баннера</label>
+                    </div>
+                    <input class="form-control" id="banner_color" name="banner_color">
                     <div class="invalid-feedback">
                         Please enter a valid email address for shipping updates.
                     </div>
@@ -160,6 +171,7 @@
 <script src="datepicker/js/datepicker.js"></script>
 <script src="datepicker/js/timepicker.js"></script>
 <script src="datepicker/js/datetimepicker.js"></script>
+<script src="spectrum/spectrum.js"></script>
 
 <script>
     $('#startTime').datetimepicker({
@@ -175,6 +187,13 @@
         format: 'dd-mm-yyyy HH:MM',
         datepicker: {weekStartDay: 1},
         footer: true
+    });
+    $('#banner_color').spectrum({
+        color: "#f00",
+        preferredFormat: "hex",
+        change: function(color) {
+            document.getElementById('banner').style.backgroundColor = color.toHexString();
+        }
     });
 </script>
 
